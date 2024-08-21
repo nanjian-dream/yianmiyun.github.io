@@ -142,7 +142,7 @@ State.variables.return = passage();
 3.伤口中提取到微量玻璃碎屑，推断凶器是玻璃烟灰缸，直径15公分。
 4.死者有多次流产史。
 
-[[退出|$return]]</tw-passagedata><tw-passagedata pid="2" name="StoryAuthor" tags="" position="200,0" size="100,100">v1.0 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;i&gt;by：云山乱&lt;/i&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryInit" tags="" position="50,0" size="100,100">&lt;&lt;script&gt;&gt;Config.history.controls = false;&lt;&lt;/script&gt;&gt;//关闭侧边栏后退按钮
+[[退出|$return]]</tw-passagedata><tw-passagedata pid="2" name="StoryAuthor" tags="" position="200,0" size="100,100">v1.1 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;i&gt;by：云山乱&lt;/i&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryInit" tags="" position="50,0" size="100,100">&lt;&lt;script&gt;&gt;Config.history.controls = false;&lt;&lt;/script&gt;&gt;//关闭侧边栏后退按钮
 
 &lt;&lt;set $casefile = false&gt;&gt; // 案件档案
 &lt;&lt;set $dialog = false&gt;&gt; // 谈话记录
@@ -298,10 +298,14 @@ State.variables.return = passage();
 请进入该编号档案，查阅案件相关信息。
 
 [[CF240618|江婷案]]
-&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="查询" tags="" position="500,25" size="100,100">[[174XXXX2418]]
+&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="查询" tags="noreturn" position="500,25" size="100,100">[[174XXXX2418]]
 [[冰点咖啡酒吧]]
-&lt;&lt;if $hualinCo == true&gt;&gt;[[华林商贸]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="案件档案" tags="" position="25,350" size="100,100">[[CF240618]]
-</tw-passagedata><tw-passagedata pid="19" name="江婷案" tags="" position="2300,250" size="100,100">案件编号：CF240618 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 案件状态：$jiangtingCaseState
+&lt;&lt;if $hualinCo == true&gt;&gt;[[华林商贸]]&lt;&lt;/if&gt;&gt;
+
+[[退出查询|$return]]</tw-passagedata><tw-passagedata pid="18" name="案件档案" tags="noreturn" position="25,350" size="100,100">[[CF240618]]
+
+
+[[退出|$return]]</tw-passagedata><tw-passagedata pid="19" name="江婷案" tags="" position="2300,250" size="100,100">案件编号：CF240618 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 案件状态：$jiangtingCaseState
 &lt;hr&gt;
 2024年6月18日上午10：27，C市警方接到报警电话，报警人称新兰公寓出现命案，被害人趴在地上，脑后大量出血。
 警方立即前往现场调查，确认被害人已经死亡。
@@ -329,7 +333,7 @@ State.variables.return = passage();
 [[退出档案|江婷案-开始调查]]</tw-passagedata><tw-passagedata pid="20" name="江婷案-开始调查" tags="" position="2300,375" size="100,100">现在你可以对相关人员进行询问，从他们的证词中寻找疑点。
 
 [[何阳|何阳-第一轮][$heyang1 = true]]
-[[赵兵|赵兵-第一轮][$zhaobing1 = true]]</tw-passagedata><tw-passagedata pid="21" name="监控" tags="" position="550,750" size="100,100">&lt;nobr&gt;
+[[赵兵|赵兵-第一轮][$zhaobing1 = true]]</tw-passagedata><tw-passagedata pid="21" name="监控" tags="noreturn" position="550,750" size="100,100">&lt;nobr&gt;
 &lt;&lt;set _year = [2021, 2022, 2023, 2024]&gt;&gt;
 &lt;&lt;set _month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]&gt;&gt;
 &lt;&lt;set _day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 17, 18]&gt;&gt;
@@ -344,7 +348,8 @@ State.variables.return = passage();
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-</tw-passagedata><tw-passagedata pid="22" name="江婷案-第一轮调查结束" tags="" position="2400,725" size="100,100">&lt;&lt;nobr&gt;&gt;
+
+[[退出|$return]]</tw-passagedata><tw-passagedata pid="22" name="江婷案-第一轮调查结束" tags="" position="2400,725" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $casefile = true&gt;&gt;
 &lt;&lt;set $dialog = true &gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
@@ -355,9 +360,11 @@ State.variables.return = passage();
 
 &lt;&lt;if $talk == true&gt;&gt;冰点咖啡离新兰公寓挺近，步行大约十分钟就能到。&lt;&lt;/if&gt;&gt;
 
-[[继续调查|江婷案-第二轮调查]]</tw-passagedata><tw-passagedata pid="23" name="谈话记录" tags="" position="800,575" size="100,100">[[何阳|何阳-谈话记录]]
+[[继续调查|江婷案-第二轮调查]]</tw-passagedata><tw-passagedata pid="23" name="谈话记录" tags="noreturn" position="800,575" size="100,100">[[何阳|何阳-谈话记录]]
 [[赵兵|赵兵-谈话记录]]
-</tw-passagedata><tw-passagedata pid="24" name="赵兵-谈话记录" tags="noreturn" position="925,700" size="100,100">&lt;&lt;if $zhaobing1 == true&gt;&gt;
+
+
+[[退出|$return]]</tw-passagedata><tw-passagedata pid="24" name="赵兵-谈话记录" tags="noreturn" position="925,700" size="100,100">&lt;&lt;if $zhaobing1 == true&gt;&gt;
 [[和被害者关系|赵兵-和被害者关系]]
 [[江婷伤痕|赵兵-江婷伤痕]]
 [[流产|赵兵-流产]]
@@ -573,12 +580,14 @@ State.variables.return = passage();
 不瞒你说，我能混到现在的位置，还是靠他帮衬。
 不说了，有他这个朋友，是我这辈子最大的福气。
 
-[[继续|$return]]</tw-passagedata><tw-passagedata pid="44" name="角色" tags="" position="500,1500" size="100,100">[[江婷]]
+[[继续|$return]]</tw-passagedata><tw-passagedata pid="44" name="角色" tags="noreturn" position="500,1500" size="100,100">[[江婷]]
 [[何阳]]
 [[赵兵]]
 &lt;&lt;if $weihang == true&gt;&gt;[[魏航]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $lintao == true&gt;&gt;[[林涛]]&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $chenyan == true&gt;&gt;[[陈燕]]&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="何阳" tags="noreturn" position="500,1625" size="100,100">【何阳】
+&lt;&lt;if $chenyan == true&gt;&gt;[[陈燕]]&lt;&lt;/if&gt;&gt;
+
+[[退出|$return]]</tw-passagedata><tw-passagedata pid="45" name="何阳" tags="noreturn" position="500,1625" size="100,100">【何阳】
 
 性别：男
 年龄：32
